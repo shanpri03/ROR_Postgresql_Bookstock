@@ -1,7 +1,6 @@
 class BkstckmanageController < ApplicationController
     skip_before_action :verify_authenticity_token
-    
-   def index 
+    def index 
     render json: Bookstck.all
 end
 
@@ -12,7 +11,7 @@ def show
     h = Bookstck.find(params[:id])
     render json: h
     else
-    render html:"No data found"     
+    render html:"Book not found"     
    end
 
 end
@@ -22,21 +21,21 @@ end
     if(v)
      Bookstck.create('bookname': params[:bookname], 'bookauthor': params[:bookauthor], 'bookquantity': params[:bookquantity],'bookprice': params[:bookprice], 'pubyear': params[:pubyear])
      puts p
-     render json: "Data added"
+     render json: "Book created successfully"
     else
-     render json: "Data not added"
+     render json: "Book not added"
       end
  
       def update
         b = Bookstck.find(params[:id].to_i)
         b.update('bookname': params[:bookname], 'bookauthor': params[:bookauthor], 'bookquantity': params[:bookquantity],'bookprice': params[:bookprice], 'pubyear': params[:pubyear])
-        render json: "Data Updated"
+        render json: "Book data Updated"
     end
 
     def destroy
         a = Bookstck.find(params[:id].to_i)
         a.destroy
-        render json: "Data deleted"
+        render json: "Book deleted successfully"
     end
 
  end

@@ -1,0 +1,2 @@
+module SbyauthorHelper
+end

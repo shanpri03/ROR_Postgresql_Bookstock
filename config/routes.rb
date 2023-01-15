@@ -7,4 +7,6 @@ Rails.application.routes.draw do
  # root "bkstckmanage#index"
   
   resources :bkstckmanage
+  resources :sbyname
+  resources :sbyauthor
 end

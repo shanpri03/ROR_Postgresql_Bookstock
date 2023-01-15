@@ -1,0 +1,2 @@
+module SbynameHelper
+end
